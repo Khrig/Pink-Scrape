@@ -28,7 +28,7 @@ def notification(name):
     toaster.show_toast("Pink Scrape", "New Listing: {}".format(name)) 
 
 def main():
-    always_notify = True
+    always_notify = False
 
     with open('search.txt', 'r') as file:
         search_URL = file.read()
@@ -62,6 +62,7 @@ def main():
 
     if change == True:
         bike_frame.to_csv("Results.csv", index_label = "index")
+        notification(bike_frame["title"][0])
     elif always_notify == True:
         print("telling you anyway")
         notification(bike_frame["title"][0])
