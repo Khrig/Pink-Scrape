@@ -39,6 +39,7 @@ def main():
         print("CSV not found attmpting to make new")
         create_csv()
         d = pd.read_csv("Results.csv")
+
         
     r = requests.get(search_URL)
 
@@ -68,8 +69,4 @@ def main():
         notification(bike_frame["title"][0])
 
 main()
-
-# with open("Output.txt", "w") as text_file:
-#     text_file.write(soup.prettify())
-
 
